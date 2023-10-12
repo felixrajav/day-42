@@ -7,7 +7,7 @@ SignUpRouter.post('/createUser', async (req, res, next) => {
     const data = req.body;
 
     try {
-        const user = await userModel.findOne({ email: data.email });
+        const user = await userModel.findOne({ mail: data.email });
         if (user) {
             return res.status(409).json({
                 success: false,
